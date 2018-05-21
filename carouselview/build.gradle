@@ -24,10 +24,18 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
-android {
-    compileSdkVersion 25
+repositories {
+    jcenter()
+    google()
+    maven { url 'https://maven.google.com' }
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+}
 
-    buildToolsVersion "25.0.2"
+android {
+    compileSdkVersion 26
+
+    buildToolsVersion "26.0.2"
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
