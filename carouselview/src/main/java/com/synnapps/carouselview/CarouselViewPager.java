@@ -3,6 +3,7 @@ package com.synnapps.carouselview;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.animation.Interpolator;
 
@@ -56,6 +57,14 @@ public class CarouselViewPager extends ViewPager {
      */
     public void setTransitionVelocity(int scrollFactor) {
         mScroller.setmScrollDuration(scrollFactor);
+    }
+
+    public void setSens(float sens) {
+        if (sens < 0) {
+            Log.d("CarouselViewPager", "the value \"sens\" must be positive");
+            return;
+        }
+        this.sens = sens;
     }
 
     @Override
